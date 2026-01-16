@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #ffe6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+/* Hide elements until needed */
+.hidden {
+    display: none;
+}
+
+/* Envelope Container */
+.envelope-container {
+    cursor: pointer;
+    position: relative;
+    width: 300px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Envelope Base */
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 220px;
+    background: #ff4d4d;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Envelope Flaps */
+.top-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 80px solid #d6336c;
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+}
+
+.bottom-flap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #ff4d4d;
+}
+
+.left-flap, .right-flap {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.left-flap {
+    left: 0;
+    border-width: 60px 100px 60px 0;
+    border-color: transparent #ff6666 transparent transparent;
+}
+
+.right-flap {
+    right: 0;
+    border-width: 60px 0 60px 100px;
+    border-color: transparent transparent transparent #ff6666;
+}
+
+/* Letter Inside */
+.letter {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    width: 240px;
+    height: 180px;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #d6336c;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Card Styling */
+.card-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 {
+    color: #ff4d4d;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#yesButton {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+#yesButton:hover {
+    background-color: #e60000;
+}
+
+#noButton {
+    background-color: #cccccc;
+    color: black;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
